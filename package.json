@@ -9,14 +9,15 @@
     "restify": "^2.8.4"
   },
   "devDependencies": {
-    "grunt": "latest",
-    "grunt-mocha-test": "latest",
     "bower": "latest",
-    "supertest": "latest",
-    "mocha": "latest",
-    "grunt-open": "^0.2.3",
+    "grunt": "latest",
     "grunt-contrib-watch": "^0.6.1",
-    "load-grunt-tasks": "^0.4.0"
+    "grunt-mocha-test": "latest",
+    "grunt-nodemon": "^0.3.0",
+    "grunt-open": "^0.2.3",
+    "load-grunt-tasks": "^0.4.0",
+    "mocha": "latest",
+    "supertest": "latest"
   },
   "scripts": {
     "postinstall": "grunt test",

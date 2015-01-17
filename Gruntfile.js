@@ -10,34 +10,9 @@ module.exports = function(grunt) {
         src: ['test/**/*.js']
       }
     },
-    watch: {
-      options: {
-        livereload: true,
-      },
-      restify: {
-        files:  [ '*.js','routes/*.js', 'models/*.js', 'config/*.js' ],
-        tasks:  [ 'restify:dev' ],
-        options: {
-          spawn: false // Without this option specified restify won't be reloaded
-        }
-      }
-    },
-    restify: {
-      options: {
-        port : 3000,
-        node_env: 'development'
-      },
+    nodemon: {
       dev: {
-        options: {
-          script: 'app.js',
-          node_env: 'development'
-        }
-      },
-      prod: {
-        options: {
-          script: 'app.js',
-          node_env: 'production'
-        }
+        script: './app.js'
       }
     },
     open: {
@@ -53,17 +28,15 @@ module.exports = function(grunt) {
     if(arg && arg == 'prod')
     {
       grunt.task.run([
-        'restify:prod',
-        'open',
-        'watch'
+        'nodemon:prod',
+        'open'
       ]);
     }
     else
     {
       grunt.task.run([
-        'restify:dev',
-        'open',
-        'watch'
+        'nodemon:dev',
+        'open'
       ]);
     }
   });
