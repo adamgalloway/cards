@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
+  // TODO add livereload see: https://github.com/ChrisWren/grunt-nodemon
   grunt.initConfig({
     // Configure a mochaTest task
     mochaTest: {
