@@ -49,7 +49,8 @@ server.use(restify.gzipResponse());
 server.use(restify.bodyParser());
 
 server.get(/\/public\/?.*/, restify.serveStatic({
-    directory: './public'
+    directory: __dirname,
+    default: 'index.html'
 }));
 
 server.use(function logger(req,res,next) {
